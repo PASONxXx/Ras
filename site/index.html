@@ -1,226 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton Loading Effect - Using HTML, CSS & Javascript</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <link rel="stylesheet" href="form.css">
-    <title>三年生応援ソングアンケート</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-:root{
-    --color-white:#f3f3f3;
-    --color-darkblue:#796ec8;
-    --color-darkblue-alpha:rgba(13, 138, 187, 0.8);
-    --color-green:#21eb6e;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-*,*::before,*::after{
-    box-sizing: border-box;
-}
+
 body{
-    font-family: 'Poppins',sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--color-white);
-    margin: 0;
-}
-body::before{
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: var(--color-darkblue);
-    background-image: linear-gradient(215deg,rgba(75, 113, 179, 0.8),rgba(124, 192, 147, 0.8)),url(https://otoraku.jp/column/2020/09/02/7007919962283a409f65d052829140edaad43662.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#title{
-    color: var(--color-green);
-    font-weight: 600;
-    
-    
-}
-h1{
-    font-weight: 400;
-    line-height: 1.2;
-}
-p{
-    font-size: 1.125rem;
-}
-h1,p{
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-label{
-    display: flex;
-    align-items: center;
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
+  min-height: 100vh;
+  background-color:#191919;
 }
 
-input,button,select,textarea{
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
 .container{
-    width: 100%;
-    margin: 3.125rem auto 0 auto;
-    padding:1.8rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.header{
-    padding: 0 0.625rem;
-    margin-bottom: 1.875rem;
-    text-align: center;
-}
-#description{
-    font-style: italic;
-    font-weight: 200;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-
-}
-.clue{
-    margin-left: 0.25rem;
-    font-size: 0.9rem;
-    color: #e4e4e4;
-}
-#quest{
-    color: rgb(241, 191, 98);
-    font-size: 1.5rem;
-}
-form{
-    background: var(--color-darkblue-alpha);
-    border-radius: 0.25rem;
+.card{
+  position: relative;
+  background: #000;
+  max-width: 350px;
+  width: 350px;
+  margin: 20px;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
 }
 
-@media (min-width: 480px){
-    form{
-        padding: 2.5rem;
-    }
-}
-.form-group{
-    margin: 0 auto 1.25rem auto;
-    padding: 0.25rem;
-}
-.formControl{
-    display: block;
-    width: 100%;
-    height: 2.375rem;
-    padding: 0.375rem 0.75rem;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
-}
-.formControl:focus{
-    border-color:blue;
-    outline: 0;
-    box-shadow:0 0 0 0.2rem rgba(0,123,255,0.25)
-}
-.inputRadio,
-.checkbox
-{
-    display: inline-block;
-    margin-right: 0.625rem;
-    min-height: 1.25rem;
-    min-width: 1.25rem;
-
-}
-.textarea{
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1.15rem;
-    outline: none;
-    border-color: blue;
-    border-radius: 5px;
-}
-.btn{
-    display: block;
-    width: 100%;
-    padding:0.5rem 0.75rem;
-    background: var(--color-green);
-    color: inherit;
-    border-radius: 15px;
-    cursor: pointer;
-    outline: none;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    color: blue;
-    border: none;
+.card-image{
+  max-height: 200px;
+  overflow: hidden;
 }
 
-@media (min-width:576px){
-    .container{
-        max-width: 540px;
-    }
+.card-image img{
+  max-width: 100%;
+  height: auto;
+  visibility: hidden;
 }
-@media (min-width:800px){
-    .container{
-        max-width: 760px;
-    }
+
+.card-title span{
+  visibility: hidden;
 }
-</style>
 
+.card-description span{
+  visibility: hidden;
+}
 
+.card-mediaIcons a i{
+  visibility: hidden;
+}
 
+.card-info{
+  position: relative;
+  color: green;
+  padding: 20px;
+}
 
-</head>
-<body>
-    <div class="container ">
-        <header class="header">
-            <h1 id="title">
-                三年生応援ソング
-            </h1>
-            <p id="description">
-       
-       <br>三年生応援ソングにふさわしいと思う曲とそのアーティスト名を
-                <br>正式名称で書いてください。
-               <br>アンケート結果から三年生応援ソングが決まります
-                <br>真剣に回答してください。
-            </p>
-        </header>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScbO7mxMT3Tdnxg5ehAVuAlKRn-629zsLhBdehvlXYYpkv6_Q/formResponse" id="">
+.card-info h3{
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-         
-            <div class="form-group">
-                <label for="name">年組番号</label>
-                <input type="text" name="entry.648287089" id="name" class="formControl" placeholder="Enter your Number" required>
-            </div>
+.card-info p{
+  font-size: 1em;
+  margin-bottom: 15px;
+}
 
+.card-info .card-mediaIcons{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info .card-mediaIcons a{
+  color: red;
+  font-size: 1.4em;
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+}
+
+.card-info .card-mediaIcons a:hover{
+  color: green;
+}
+
+.loading{
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.loading:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading{
+  100%{
+    transform: translateX(100%);
+  }
+}
+      
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-image loading"><img src="https://cdn.discordapp.com/attachments/838310376403632152/942276731388174386/maxresdefault.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>紹介動画</span></h3>
+          <p class="card-description loading"><span>職員IDとかもここで紹介されてます</span></p>
+          <div class="card-mediaIcons">
            
-            <div class="form-group">
-                <label for="name">名前</label>
-                <input type="text" name="entry.1760833120" id="name" class="formControl" placeholder="Enter your Name" required>
-            </div>
-
-
-                 
-            <div class="form-group">
-                <p id="quest">曲名・アーティスト名
-                    <br>※正式名称で書いてください
-             
-            </p>
-                <textarea name="entry.1034283729"  cols="30" rows="5"  id="feedback" class="textarea" placeholder="Song name / artist name"></textarea>
-            </div>
-
-
-            <div class="form-group">
-                <button type="submit" id="submit" class="btn">送信</button>
-            </div>
-        </form>
+            <a href="https://www.youtube.com/watch?v=n1bLfiYmh1A" class="loading"><i class="">GO</i></a>
+      
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image loading"><img src="https://cdn.discordapp.com/attachments/838310376403632152/942277703720140830/28dc32d4-26c9-470a-8ea5-8089538ea5bc_base_resized.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>SCiPNETダウンロード</span></h3>
+          <p class="card-description loading"><span>以下のDownloadから<br>SCiPNETをダウンロードできます</span></p>
+          <div class="card-mediaIcons">
+           
+            <a href="https://github.com/PASONxXx/item/blob/main/SCP-1374-JP.zip?raw=true" class="loading"><i class="">Download</i></a>
+         
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image loading"><img src="https://cdn.discordapp.com/attachments/838310376403632152/942276861587763230/6ed5e77f9a5f4d3d8387f811977c6665.jpg" alt=""></div>
+        <div class="card-info">
+          <h3 class="card-title loading"><span>実はツイッターとかやってたりする</span></h3>
+          <p class="card-description loading"><span>まじフォローしてフォローフォローフォローフォローフォローフォロー
+              フォローフォローフォロー<br>うへへへへへｗｗｗ()</span></p>
+          <div class="card-mediaIcons">
+          
+            <a href="https://twitter.com/PASON63009748" class="loading"><i class="fab fa-Twitter">Twitter</i></a>
+  
+     
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+
+    <script type="text/javascript">
+        const cardImages = document.querySelectorAll(".card-image");
+        const cardTitles = document.querySelectorAll(".card-title");
+        const cardDescriptions = document.querySelectorAll(".card-description");
+        const cardMediaIcons = document.querySelectorAll(".card-mediaIcons a");
+        const cardImgs = document.querySelectorAll(".card-image img");
+        const cardTitleSpans = document.querySelectorAll(".card-title span");
+        const cardDescSpans = document.querySelectorAll(".card-description span");
+        const mediaIcons = document.querySelectorAll(".card-mediaIcons a i");
+    
+        const renderCard = () => {
+        
+          cardImages.forEach((cardImage) => {
+            cardImage.classList.remove("loading");
+          });
+          cardTitles.forEach((cardTitle) => {
+            cardTitle.classList.remove("loading");
+          });
+          cardDescriptions.forEach((cardDescription) => {
+            cardDescription.classList.remove("loading");
+          });
+          cardMediaIcons.forEach((cardMediaIcon) => {
+            cardMediaIcon.classList.remove("loading");
+          });
+    
+     
+          cardImgs.forEach((cardImg) => {
+            cardImg.style.visibility = "visible";
+          });
+          cardTitleSpans.forEach((cardTitleSpan) => {
+            cardTitleSpan.style.visibility = "visible";
+          });
+          cardDescSpans.forEach((cardDescSpan) => {
+            cardDescSpan.style.visibility = "visible";
+          });
+          mediaIcons.forEach((mediaIcon) => {
+            mediaIcon.style.visibility = "visible";
+          });
+        }
+    
+
+        setTimeout(() => {
+          renderCard();
+        }, 4000);
+   
+        </script>
+          
+
+
+  </body>
 </html>
+      
