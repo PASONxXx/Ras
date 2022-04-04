@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEYCODE - 癒し・作業用BGM</title>
+
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        font-size:62.5%;
+    }
+
+    .container{
+        background:#191919;
+    }
+
+    .container .heading{
+        font-size:3rem;
+        padding:2rem 0;
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        text-shadow:0.5rem 1rem #000;
+        color:#fff;
+    }
+
+    .container .music-container{
+       display: flex;
+       align-items: center;
+       flex-flow: column;
+    }
+
+    .container .music-container .box{
+        height:16rem;
+        width:80%;
+        display: flex;  
+        align-items: center;
+        background:#f1f3f4;
+        border-radius: 1rem;
+        text-shadow:0.5rem 1rem #000;
+        overflow: hidden;
+        margin:2rem;
+    }
+
+    .container .music-container .box .imege{
+        height:100%;
+        width:25%;
+    }
+
+    .container .music-container .box .image img{
+        height:100%;
+        width:100%;
+    }
+
+    .container .music-container .box .music{
+        width:75%;
+        padding-right: 300px;
+    }
+
+    .container .music-container .box .music audio{
+        width:100%;
+        outline: none;
+    }
+
+    .container .music-container .box .music audio-webkit-media-controls-eclosure{
+      background:none;
+
+    }
+
+</style>
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="heading">
+
+            <h1>KEY CODE
+                <br>～癒し・作業用bgm～
+            </h1>
+        </div>
+
+        <div class="music-container">
+
+            <div class="box">
+                <div class="imege">
+                    <img src="https://cdn.discordapp.com/attachments/909048957328580608/930448667339522058/unknown.png" alt="">
+                </div>
+                <div class="music">
+                    <audio controls loop>
+                        <source src="https://github.com/PASONxXx/item/blob/main/music/ame.mp3?raw=true" type="audio/mp3">
+                      </audio>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <div class="imege">
+                    <img src="https://cdn.discordapp.com/attachments/909048957328580608/930448774785007637/unknown.png" alt="">
+                </div>
+                <div class="music">
+                    <audio controls loop>
+                        <source src="https://github.com/PASONxXx/item/blob/main/music/danro.mp3?raw=true" type="audio/mp3">
+                      </audio>
+                </div>
+            </div>
+
+
+
+
+            <div class="box">
+                <div class="imege">
+                    <img src="https://cdn.discordapp.com/attachments/909048957328580608/930448846562140221/unknown.png" alt="">
+                </div>
+                <div class="music">
+                    <audio controls loop>
+                        <source src="https://github.com/PASONxXx/item/blob/main/music/nami.mp3?raw=true" type="audio/mp3">
+                      </audio>
+                </div>
+            </div>
+
+
+
+            <div class="box">
+                <div class="imege">
+                    <img src="https://cdn.discordapp.com/attachments/909048957328580608/930449189509398558/unknown.png" alt="">
+                </div>
+                <div class="music">
+                    <audio controls loop>
+                        <source src="https://github.com/PASONxXx/item/blob/main/music/kafe.mp3?raw=true" type="audio/mp3">
+                      </audio>
+                </div>
+            </div>
+
+
+
+
+            <div class="box">
+                <div class="imege">
+                    <img src="https://cdn.discordapp.com/attachments/909048957328580608/930449349224333342/unknown.png" alt="">
+                </div>
+                <div class="music">
+                    <audio controls loop>
+                        <source src="https://github.com/PASONxXx/item/blob/main/music/tori.mp3?raw=true" type="audio/mp3">
+                      </audio>
+                </div>
+            </div>
+
+
+
+
+
+
+         
+
+
+        </div>
+
+    </div>
+    
+
+    <script>
+        const music = new Audio('https://github.com/PASONxXx/item/blob/main/music/ame.mp3?raw=true');
+        const music = new Audio('https://github.com/PASONxXx/item/blob/main/music/danro.mp3?raw=true');
+        const music = new Audio('https://github.com/PASONxXx/item/blob/main/music/nami.mp3?raw=true');
+        const music = new Audio('https://github.com/PASONxXx/item/blob/main/music/kafe.mp3?raw=true');
+        const music = new Audio('https://github.com/PASONxXx/item/blob/main/music/tori.mp3?raw=true');
+        const music = new Audio('music/koorogi.mp3');
+        music.play();
+        music.pause();
+        music.volume = 0.1;
+        music.muted = true;
+        music.muted = false;
+        music.currentTime = 60;
+        music.loop = true;
+  music.loop = false;
+    </script>
+
+
+</body>
+</html>
